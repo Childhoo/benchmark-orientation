@@ -1,3 +1,4 @@
+#define _GLIBCXX_USE_C99 1
 #include "KAZE.h"
 #include "utils.h"
 #include <opencv2/legacy/legacy.hpp>

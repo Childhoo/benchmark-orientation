@@ -2,7 +2,7 @@
 #define DAISY_H
 
 // #include "kutility/kutility.h"
-
+#include <cstdarg>
 #include "kutility/general.h"
 #include "kutility/math.h"
 #include "kutility/image.h"

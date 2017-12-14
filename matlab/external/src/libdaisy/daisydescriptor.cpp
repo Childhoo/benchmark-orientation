@@ -1,4 +1,4 @@
-
+#define _GLIBCXX_USE_C99 1
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/features2d/features2d.hpp>
@@ -8,7 +8,8 @@
 // setprecision example
 #include <iostream>		// std::cout, std::fixed
 #include <iomanip>		// std::setprecision
-
+#include <cstdarg>             // adden in 14.12
+//#include <string>            // adden in 14.12
 #include "daisy/daisy.h"
 
 using namespace std;
@@ -212,7 +213,7 @@ int main(int argc, char *argv[])
 
 	getline(ifs_keypoints, lineread);	//skip 1
 	Tokenize(lineread, tokens);
-	int nbVar = stoi(delSpaces(tokens[0]));
+	int nbVar = std::stoi(delSpaces(tokens[0]));
 
 	tokens.clear();
 
@@ -234,7 +235,7 @@ int main(int argc, char *argv[])
 		tokens.clear();
 		Tokenize(lineread, tokens);
 		for (int ii=0; ii < 13; ++ii){
-			keypoints_orig[count][ii] = stof(delSpaces(tokens[ii]));
+			keypoints_orig[count][ii] = std::stof(delSpaces(tokens[ii]));
 		}
 
 		if (maxscale < keypoints_orig[count][2])

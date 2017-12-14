@@ -1,4 +1,4 @@
-
+#define _GLIBCXX_USE_C99 1
 #include 	<cstdlib>
 #include	<iostream>
 #include	<fstream>

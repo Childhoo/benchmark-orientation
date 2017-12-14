@@ -1,7 +1,6 @@
-CC=g++
+CC=g++-4.8
 CFLAGS = `pkg-config opencv --cflags` -std=c++11 -Wno-deprecated-register
 LDFLAGS = `pkg-config opencv --libs`
-
 CFLAGS += -IoriginalSource/include/ -IoriginalSource/thirdparty/agast/include/ -IoriginalSource/thirdparty/agast/include/agast -march=native
 
 CXXSOURCES1=$(wildcard  mainKp.cpp originalSource/src/brisk.cpp)

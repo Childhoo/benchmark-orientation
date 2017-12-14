@@ -39,7 +39,8 @@
 #include <sstream>
 #include <algorithm>
 #include <iomanip>
-#include <tmmintrin.h>
+//#include <tmmintrin.h>
+#include <immintrin.h> //change to coop with newer CPU, e.g. i7-6850k as my case
 #include <string.h>
 
 #include <opencv2/features2d/features2d.hpp>

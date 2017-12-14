@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS = `pkg-config opencv --cflags` -std=c++11 -Wno-deprecated-register
 LDFLAGS = `pkg-config opencv --libs`
-
+TOOLCHAIN_CFLAGS='-mssse3'
 CFLAGS += -IoriginalSource/include/  -IoriginalSource/src/
 
 CXXSOURCES1=$(wildcard  mainDesc.cpp originalSource/src/freak.cpp)
@@ -20,7 +20,7 @@ release: CFLAGS += -O2 -DNDEBUG
 release: $(EXECUTABLE1)
 
 $(EXECUTABLE1): $(CXXOBJECTS1)
-	$(CC) $(CXXOBJECTS1) $(CFLAGS) $(LDFLAGS) -o $@ 
+	$(CC) $(TOOLCHAIN_CFLAGS) $(CXXOBJECTS1) $(CFLAGS) $(LDFLAGS) -o $@ 
 
 
 .cc.o:
