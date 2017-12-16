@@ -110,10 +110,12 @@ function [] = run_evaluate(datasetName,numKey,startSeq,endSeq)
     parameters.parameters_dir_name = 'prelearned';
     
     % Detectors to test
-    parameters.bypassDisactivateDetector = {'EdgeFociD'};
+%     parameters.bypassDisactivateDetector = {'EdgeFociD'};
+    parameters.bypassDisactivateDetector = {'EdgeFociD','SIFT'};
+    
     
     % Descriptors to test
-    parameters.bypassDesactivateDescriptor = {'VGG', 'Daisy'};
+    parameters.bypassDesactivateDescriptor = {'VGG', 'Daisy','SIFT'};
     
 
     % Set this to true, if you want to delete ALL the cache. I personally

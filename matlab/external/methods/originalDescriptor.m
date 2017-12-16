@@ -41,7 +41,8 @@ function [com] = originalDescriptor( methodName, in_file_name,  kp_file_name, ou
     end
     
     [status, whereisOpenCV] = system('pkg-config opencv --libs-only-L');
-    whereisOpenCV = whereisOpenCV(3:end-1);
+%     whereisOpenCV = whereisOpenCV(3:end-1);
+    whereisOpenCV = '/usr/local/opencv/2.4.12/lib'; %give expicitly because system('pkg-config opencv --libs-only-L') returns weird results!
     library_path_linux = sprintf([ 'LD_LIBRARY_PATH="' whereisOpenCV '" ; export LD_LIBRARY_PATH; OMP_NUM_THREADS=2; export OMP_NUM_THREADS']);
     library_path_mac = sprintf([ 'DYLD_LIBRARY_PATH="' whereisOpenCV '" ; export DYLD_LIBRARY_PATH; OMP_NUM_THREADS=2; export OMP_NUM_THREADS']);
     library_path = [library_path_mac ';' library_path_linux ';'];

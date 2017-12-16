@@ -17,17 +17,26 @@ void mexFunction(int nlhs,       mxArray *plhs[],
 	if (nlhs != 5) { printf("out nlhs != 5\n"); return; }
   
 	// get size of x.
-	int const num_dims1 = mxGetNumberOfDimensions(prhs[0]);
-	int const *dims1 = mxGetDimensions(prhs[0]);
+	//int const num_dims1 = mxGetNumberOfDimensions(prhs[0]);
+	//int const *dims1 = mxGetDimensions(prhs[0]);
+	//int const num_dims2 = mxGetNumberOfDimensions(prhs[1]);
+	//int const *dims2 = mxGetDimensions(prhs[1]);
+	//int const num_dims3 = mxGetNumberOfDimensions(prhs[2]);
+	//int const *dims3 = mxGetDimensions(prhs[2]);	
+    int const num_dims1 = mxGetNumberOfDimensions(prhs[0]);
+	mwSize const *dims1 = mxGetDimensions(prhs[0]);
 	int const num_dims2 = mxGetNumberOfDimensions(prhs[1]);
-	int const *dims2 = mxGetDimensions(prhs[1]);
+	mwSize const *dims2 = mxGetDimensions(prhs[1]);
 	int const num_dims3 = mxGetNumberOfDimensions(prhs[2]);
-	int const *dims3 = mxGetDimensions(prhs[2]);
+	mwSize const *dims3 = mxGetDimensions(prhs[2]);
+
 	if(dims1[0]<9 || dims2[0]<9 || dims1[0]!=dims2[0] || dims3[0]!=1){ printf("dims != 9\n"); return; }
   
 	// create new array of the same size as x.
 
-	int *odim = new int[2];
+	//int *odim = new int[2];
+    mwSize *odim = new mwSize[2];
+
 	odim[0]=dims2[1];
 	odim[1]=dims1[1];
 	plhs[0] = mxCreateNumericArray(2, odim, mxDOUBLE_CLASS, mxREAL);

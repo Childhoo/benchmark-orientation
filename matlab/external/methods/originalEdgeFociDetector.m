@@ -59,7 +59,9 @@ function [failed] = originalEdgeFociDetector(in_file_name, out_file_name, p, bMu
     if ismac
         detector_path = ['/usr/local/bin/wine ' detector_path];
     elseif isunix
-        detector_path = ['wine ' detector_path]; 
+%         detector_path = ['/usr/bin/wine ' detector_path]; % changed to coop with my system...   
+         detector_path = ['wine ' detector_path]; 
+%         detector_path = detector_path; 
     end
     
     % Check if input image file is too large and halfsize it if needed --
